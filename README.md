@@ -77,20 +77,15 @@ select * from customer
 - Data will be inserted into your MsSQL server!
 
 ![](images/pipeline.PNG)
-
-### Contribution guidelines for future developers.
-### Mapping
-pandas.to_sql is ideal for loading small amounts of data (few thousand rows) into SQL server.
-**SQLAlchemy** - Alchemy is a python library used for interacting with sql databases. There are two main components:
-- Core - lets you write sql statements in a pythonic way
-- Object relation mapping - maps python classes/dfs to db tables <br>
-**Engine** - Is the starting point for and SQLAlchemy Application. It:
-- manages connections to the database
-- never connect directly to the db, the engine handles connections <br>
-**Connection String** - provides the required variables for the engine to connect to the db <br>
-**Driver** - driver is used to translate queries to the SQL Server (Tabular Data Stream - SQL server protocol used for communication)
-- Python speaks to Driver, driver speaks to TDS
-### More info
-Contact me for issues with running the script
-### Contributions
-kdogwin44
+### ODBC Hook
+**Open Database Connectivity (ODBC)** is a standardised API that allows software applications to access data from various DBMS. It acts as a universal adapater, using database-specific drivers to translate standard SQL calls into formats that different databases can understand. <br>
+The odbc connection type provides connection to the ODBC data sources including MsSQL Server.
+### pyodbc
+pyodbc is an open source python module that makes accessing ODBC databases simple. <br>
+The odbc_connection_hook uses pyodbc, which has some system dependencies as documented on the pyodbc wiki.
+### Further Developments
+As mentioned earlier, this is a very simple demonstration of an etl pipeline using airflow. This project can be further developed altering the extraction and loading stages to more industry used approaches such as S3 to Snowflake. Other alterations such as horizontally scaling can be implemented by adding multiple airflow workers to complete multiple dags. These are just some possibilities but there are unlimited options to further develop this project.
+### More information
+This is a single developed project by kdogwin44. <br>
+Any questions regarding installation, setup or running, please reach out to kdogwin44 <br>
+Thankyou, have fun!
